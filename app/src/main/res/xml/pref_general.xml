@@ -1,0 +1,39 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:custom="http://schemas.android.com/apk/res/com.example.android.sunshine.app"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <com.example.android.sunshine.app.LocationEditTextPreference
+        android:defaultValue="@string/pref_default_location"
+        android:inputType="text"
+        android:key="@string/pref_key_location"
+        android:singleLine="true"
+        android:title="@string/pref_title_location"
+        custom:minLength ="3"/>
+
+    <ListPreference
+        android:key="@string/pref_units_key"
+        android:title="@string/pref_units_title"
+        android:defaultValue="@string/pref_units_metric"
+        android:entries="@array/pref_units_options"
+        android:entryValues="@array/pref_units_values"/>
+
+    <ListPreference
+        android:key="@string/pref_art_pack_key"
+        android:title="@string/pref_art_pack_label"
+        android:defaultValue="@string/pref_art_pack_mono"
+        android:entries="@array/prefs_art_pack_options"
+        android:entryValues="@array/prefs_art_pack_values"/>
+
+    <CheckBoxPreference
+        android:key="@string/pref_enable_notifications_key"
+        android:title="@string/pref_enable_notifications_label"
+        android:summaryOn="@string/pref_enable_notifications_true"
+        android:summaryOff="@string/pref_enable_notifications_false"
+        android:defaultValue="@string/pref_enable_notifications_default"/>
+
+</PreferenceScreen>
